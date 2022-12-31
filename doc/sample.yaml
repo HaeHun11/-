@@ -1,0 +1,21 @@
+monitoring-title:
+  ssh-info:    # all required
+    ip: 192.168.0.10
+    port: 22
+    id: root
+    password: passwd
+  check-list:  # select check list
+    - cpu:
+        core: all # or number. 1,2,3,4-8
+    - memory:
+        type: system
+    - memory:
+        type: process
+        pid: 123
+    - memory:
+        type: process
+        cmd: ./test.exe
+    - disk-usage:
+        device-name: /dev/sda1
+    - disk-usage:
+        dir-name: /home/test/dir/
